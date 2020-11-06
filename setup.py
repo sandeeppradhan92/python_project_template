@@ -1,6 +1,5 @@
 """Setup.py for the project."""
 
-from app_deployment_manager import services
 import os, shutil
 from setuptools import find_packages, setup, Command
 
@@ -59,7 +58,7 @@ class RenameCommand(Command):
 
 def do_setup():
     setup(
-        name='app_deployment_manager',
+        name='app',
         description='Manages python web app deployments in containers',
         long_description=long_description,
         long_description_content_type='text/markdown',
@@ -67,11 +66,10 @@ def do_setup():
         include_package_data=True,
         zip_safe=False,
         packages=find_packages(include=[
-            'app_deployment_manager', 
-            'app_deployment_manager.*', 
-            'app_deployment_manager.services',
-            'app_deployment_manager.services.*',
-            'app_deployment_manager.services.streamlit_deployment_service'
+            'app', 
+            'app.*', 
+            'app.blueprint1',
+            'app.blueprint1.*'
             ]),
         scripts=['bin/adm', 'bin/start_dev'],
         install_requires=[
