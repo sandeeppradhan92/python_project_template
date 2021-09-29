@@ -1,0 +1,27 @@
+[flake8]
+ignore = E203, E266, E501, W503, E402
+extend-ignore =
+    # See https://github.com/PyCQA/pycodestyle/issues/373
+    # flake8/pycodechecker give false positives on black code
+    # https://black.readthedocs.io/en/stable/guides/using_black_with_other_tools.html
+    E203,
+# line length is intentionally set to 80 here because black uses Bugbear
+# See https://black.readthedocs.io/en/stable/the_black_code_style/current_style.html#line-length for more details
+max-complexity = 18
+select = B,C,E,F,W,T4,B9
+
+# Recommend matching the black line length (default 88),
+# rather than using the flake8 default of 79:
+max-line-length = 88
+
+# Exclude files which deliberately violate style checks:
+per-file-ignores =
+    # TExample format given below
+    # tests/test_changes/hello_world.py: E201,E202,E211,W391,BLK100
+    # tests/test_changes/hello_world_EOF.py: W292,BLK100
+
+# =====================
+# flake-quote settings:
+# =====================
+# Set this to match black style:
+inline-quotes = double
