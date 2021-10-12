@@ -24,6 +24,12 @@ Folder structure template to structure a flask project
 ```shell
     make bootstrap
 ```
+```shell
+    make venv-activate
+```
+```shell
+    make help
+```
 
 ### Building the app from scratch
 ```shell
