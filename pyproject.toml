@@ -63,4 +63,10 @@ exclude = '''
 
 [tool.isort]
 # make it compatible with black
-profile = "black" 
+profile = "black"
+
+
+[tool.pytest.ini_options]
+minversion = "6.0"
+addopts = "-vs -rf -o junit_family=xunit2 --cov --cov-config=setup.cfg --tb=line"
+norecursedirs = ".svn _build tmp* .venv venv .git .pytest* __pycache__ docs build dist"

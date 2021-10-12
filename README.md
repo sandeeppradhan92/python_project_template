@@ -6,13 +6,13 @@ Folder structure template to structure a flask project
     ```shell
         brew install make
     ```
-    
+
 - Windows
     - ```shell
         choco install make
         ```
     - Other recommended option is installing a Windows Subsystem for Linux (WSL/WSL2), so you'll have a Linux distribution of your choice embedded in Windows 10 where you'll be able to install make, gccand all the tools you need to build C programs.
-    
+
 - Ubuntu
     ```shell
         sudo apt-get install build-essential
@@ -20,11 +20,12 @@ Folder structure template to structure a flask project
         sudo apt-get install -y make
     ```
 
-
-
+## Setup Environment
+```shell
+    make bootstrap
+```
 
 ### Building the app from scratch
 ```shell
     python3 setup.py bdist_wheel --python-tag py36 extra_clean
 ```
-

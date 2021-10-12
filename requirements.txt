@@ -1,12 +1,4 @@
 Flask==1.1.2
-Jinja2==2.11.2
-MarkupSafe==1.1.1
-Werkzeug==1.0.1
-gnureadline==6.3.3
-itsdangerous==1.1.0
-rauth==0.7.0
-requests==2.3.0
-wsgiref==0.1.2
-
+Flask_WTF==0.15.1
+python-dotenv==0.19.1
 gunicorn==18.0
-Flask-SSLify==0.1.4

@@ -1,0 +1,9 @@
+black
+isort
+flake8
+pre-commit
+pydocstyle
+pytest
+pytest-html
+pytest-html-reporter
+pytest-cov

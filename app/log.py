@@ -1,6 +1,6 @@
 import logging
-from logging.handlers import TimedRotatingFileHandler
 import os
+from logging.handlers import TimedRotatingFileHandler
 
 from flask import has_request_context, request
 
@@ -18,8 +18,8 @@ class RequestFormatter(logging.Formatter):
 
 
 formatter = RequestFormatter(
-    '[%(asctime)s] %(remote_addr)s requested %(url)s\n'
-    '%(levelname)s in %(module)s: %(message)s'
+    "[%(asctime)s] %(remote_addr)s requested %(url)s\n"
+    "%(levelname)s in %(module)s: %(message)s"
 )
 
 
@@ -36,8 +36,9 @@ def get_stream_handler():
 
 
 def get_file_handler(log_dir):
-    file_handler = TimedRotatingFileHandler(os.path.join(log_dir, 'app.log'),
-                                            when='midnight', backupCount=10)
+    file_handler = TimedRotatingFileHandler(
+        os.path.join(log_dir, "app.log"), when="midnight", backupCount=10
+    )
     file_handler.suffix = "%Y-%m-%d"
     file_handler.setFormatter(formatter)
     file_handler.setLevel(logging.INFO)
