@@ -1,38 +1,30 @@
 # flask_project_template
 Folder structure template to structure a flask project
 
+## Install make package
+- MAC
+    ```shell
+        brew install make
+    ```
+    
+- Windows
+    - ```shell
+        choco install make
+        ```
+    - Other recommended option is installing a Windows Subsystem for Linux (WSL/WSL2), so you'll have a Linux distribution of your choice embedded in Windows 10 where you'll be able to install make, gccand all the tools you need to build C programs.
+    
+- Ubuntu
+    ```shell
+        sudo apt-get install build-essential
+        sudo apt-get update -y
+        sudo apt-get install -y make
+    ```
+
+
+
+
 ### Building the app from scratch
-```python3 setup.py bdist_wheel --python-tag py36 extra_clean```
+```shell
+    python3 setup.py bdist_wheel --python-tag py36 extra_clean
+```
 
-### For running the app in virtual environment use :
-```adm```
-
----
-
-### Service Installation
-- Copy the deployment service file ***deployment_services/adm.service***  to ***/etc/systemd/system/*** in the deployment server
-- We must now reload the list of services:
-
-    ```sudo systemctl daemon-reload```
-
-- Then activate the launch of the service at boot:
-
-    ```sudo systemctl enable adm```
-
-- start the service
-    
-    ```sudo systemctl start adm```
-
-- stop the service
-
-    ```sudo systemctl stop adm```
-
-- check status of the service
-    
-    ```sudo systemctl status adm```
-
-- For check the logs of the service
-
-    ```journalctl -u service-name.service -b -n 20```
-
----
