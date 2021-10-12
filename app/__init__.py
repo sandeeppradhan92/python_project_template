@@ -69,23 +69,27 @@ def create_app(config_class=Config):
         return response
 
     # Import blueprint
-    from app_deployment_manager.api import app as api_bp
-    from app_deployment_manager.blueprint1 import app as bp1
+    # from app_deployment_manager.api import app as api_bp
+    # from app_deployment_manager.blueprint1 import app as bp1
 
-    app.register_blueprint(bp1)
-    app.register_blueprint(api_bp)
+    # app.register_blueprint(bp1)
+    # app.register_blueprint(api_bp)
 
     # Exempt / exclude api service from csrf authentication
-    csrf.exempt(api_bp)
+    # csrf.exempt(api_bp)
 
     # a simple echo url for testing
     @app.route("/echo/<string:value>")
     def value(value):
         return value
 
-    @app.route("/")
-    def home():
-        return redirect(url_for("service.deploy"))
+    @app.route('/ready', methods=["GET"])
+    def raedy():
+    	return "ok"
+
+    @app.route('/version', methods=["GET"])
+    def version():
+    	return "0.1"
 
     @app.errorhandler(CSRFError)
     def handle_csrf_error(e):
