@@ -11,6 +11,13 @@ try:
 except FileNotFoundError:
     long_description = ''
 
+try:
+    with open('requirements.txt') as f:
+        required_packages = f.read().splitlines()
+except FileNotFoundError:
+    required_packages = []
+
+    
 
 class CleanCommand(Command):
     """
@@ -59,7 +66,7 @@ class RenameCommand(Command):
 def do_setup():
     setup(
         name='app',
-        description='Manages python web app deployments in containers',
+        description='Provide the description',
         long_description=long_description,
         long_description_content_type='text/markdown',
         version='1.0.0.dev1',
@@ -72,22 +79,7 @@ def do_setup():
             'app.blueprint1.*'
             ]),
         scripts=['bin/adm', 'bin/start_dev'],
-        install_requires=[
-            'click==7.1.2',
-            'Flask==1.1.2',
-            'Flask-WTF==0.14.3',
-            'gitdb==4.0.5',
-            'GitPython==3.1.11',
-            'gunicorn==20.0.4',
-            'itsdangerous==1.1.0',
-            'Jinja2==2.11.2',
-            'MarkupSafe==1.1.1',
-            'python-dotenv==0.14.0',
-            'Send2Trash==1.5.0',
-            'smmap==3.0.4',
-            'Werkzeug==1.0.1',
-            'WTForms==2.3.3',
-        ],
+        install_requires= required_packages,
         setup_requires=[
             'setuptools',
             'wheel',
