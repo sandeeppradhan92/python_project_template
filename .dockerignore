@@ -3,6 +3,8 @@
 .vscode
 .idea
 .readmes
+Makefile
+Readme.md
 
 */temp*
 */*/temp*
@@ -27,3 +29,11 @@ venv
 __pycache__
 */__pycache__
 */*/__pycache__
+
+k8s
+*/k8s
+*/*/k8s
+
+Azure
+*/Azure
+*/*/Azure
