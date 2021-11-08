@@ -1,5 +1,5 @@
-# flask_project_template
-Folder structure template to structure a flask project
+# basic python project tempalte
+    Folder structure template to structure a python project. Currently the structure mimics a flask project while it can be configured to simple python scripting or automation project with minimal change.
 
 ## Install make package
 - MAC
